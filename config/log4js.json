@@ -2,7 +2,7 @@
     "appenders": [{
         "type": "console",
         "absolute": true,
-        "filename": "/data/log/xxj.log",
+        "filename": "/data/log/game.log",
         "maxLogSize": 1024000,
         "backups": 15,
         "category": "log"

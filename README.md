@@ -1,18 +1,17 @@
-XXJ Project
+game Project
 ================
 
-XXJ is based on the node.js, mongodb, socket.io.
+game is based on the node.js, mongodb
 
 require
 --------
-cd xxj && npm install
+cd game && npm install
 
 
 start server
 -----------
 npm start
 forever -e ./log/error.log start ./server.js
-forever start ./comet4
 
 test server
 --------------

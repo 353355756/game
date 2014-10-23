@@ -1,4 +1,4 @@
 module.exports = {
-	url: { route:['/ordernotify']}
+	url: { route:['']}
 
 }

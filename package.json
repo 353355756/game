@@ -1,14 +1,14 @@
 {
-  "name": "xxj",
-  "description": "这个是对新学季制作的网站",
+  "name": "game",
+  "description": "这个是游戏管理网站",
   "version": "0.0.1",
   "author": {
-    "name": "MaLiang",
-    "email": "zhili_posui@126.com"
+    "name": "liuliang",
+    "email": "353355756@qq.compression"
   },
   "engines": {
     "node": "0.10.x",
-    "npm": "1.2.x"
+    "npm": "1.3.x"
   },
   "scripts": {
     "start": "NODE_PATH=./app/controllers NODE_ENV=development ./node_modules/.bin/nodemon server.js",
@@ -60,7 +60,7 @@
     "supertest": "latest"
   },
   "keywords": [
-    "Qiaoker",
+    "game",
     "real-time communication"
   ]
 }
