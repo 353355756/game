@@ -1,0 +1,16 @@
+{
+  "appenders": [
+    {
+       "category": "log", 
+       "filename": "log.log", 
+       "pattern": "-yyyy-MM-dd", 
+       "type": "dateFile"
+    },
+    {
+      "category": "error",
+      "filename": "webError.log",
+      "pattern": "-yyyy-MM-dd",
+      "type": "dateFile"
+    }
+  ]
+}
