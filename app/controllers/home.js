@@ -13,7 +13,6 @@ var config = require('../../config/config')[env];
 var commonfunction = require('../../common/commonfunction');
 
 exports.login = function (req, res) {
-  console.log(req.isAuthenticated());
   if (req.isAuthenticated()) {
     var uid = req.user._id;
     var token = commonfunction.gen_session(uid.toString());
