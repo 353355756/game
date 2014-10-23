@@ -1,0 +1,42 @@
+extends ../layouts/default
+block style
+	link(rel="stylesheet", href='/plug/custom-theme/jquery-ui-1.10.4.custom.css').
+block content
+	input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
+	section.admin.clearfix
+		include ./_left_aside
+
+		section.pull-right
+			h2
+				创建代金券
+			ul.horizontal-ul.bind-ul
+				li.clearfix
+					span.label
+						label(for='coupon-price') 价格
+					span.input
+						input(type='text',id='coupon-price',name='price')
+					span.tips
+						最小单位是元，最好不要填小数点
+				li.clearfinx
+					span.label
+						label(for='coupon-count') 数量
+					span.input
+						input(type='text',id='coupon-count',name='count')
+					span.tips
+						数量无限制，不要填小数
+				li.clearfix
+					span.label
+						label(for='coupon-expire') 过期时间
+					span.input
+						input(type='text',id='coupon-expire',name='expire')
+					span.tips
+						日期选择不能选择今天以前的日期
+			.bottom-btn.text-center
+				a.large-green-btn.coupon-create-btn 创建代金券
+
+
+block script
+	script(src='/js/jquery-ui-1.10.4.custom.min.js').
+	script(src='/js/jquery.ui.datepicker-zh-CN.js').
+	script(src='/js/admin/addCoupon.js').
+			

@@ -1,0 +1,39 @@
+extends ../layouts/default
+block style
+	link(rel="stylesheet", href="/plug/jcrop/css/jquery.Jcrop.css").
+block content
+	section.admin.clearfix
+		include ./_left_aside
+
+		section.pull-right.admin-section
+			h2
+				用户信息
+			table.user-info
+				tbody
+					tr
+						td 用户ID
+						td= currentUser._id
+					tr
+						td 用户昵称
+						td= currentUser.nickname
+					tr
+						td 用户邮箱
+						td= currentUser.email
+					tr
+						td 用户真实姓名
+						td= currentUser.realname
+					tr
+						td 用户头像
+						td 
+							img(src='/avatar/#{currentUser.avatar}')
+
+					tr
+						td 用户电话
+						td= currentUser.mobile
+					tr
+						td 用户简介
+						td= currentUser.brief
+			.bottom-btn.text-center
+				a.large-green-btn(href='/admin/users') 返回用户列表
+
+block script

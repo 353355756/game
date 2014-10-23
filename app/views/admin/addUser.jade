@@ -1,0 +1,55 @@
+extends ../layouts/default
+block style
+block content
+	input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
+	section.admin.clearfix
+		input(type='hidden',class='user-num',value= total)
+		include ./_left_aside
+
+		section.pull-right
+			h2
+				创建用户
+			ul.horizontal-ul.bind-ul
+				li.clearfix
+					span.label
+						label(for='user-email') 用户邮箱
+					span.input
+						input(type='text',id='user-email',name='email')
+				li.clearfix
+					span.label
+						label(for='user-password') 用户密码
+					span.input
+						input(type='text',id='user-password',name= 'password')
+				li.clearfix
+					span.label
+						label(for='user-nickname') 用户昵称
+					span.input
+						input(type='text',id='user-nickname',name= 'nickname')
+				li.clearfix
+					span.label
+						label(for='user-realname') 真实姓名
+					span.input
+						input(type='text',id='user-realname',name= 'realname')
+				li.clearfix
+					span.label
+						label(for='user-role') 用户角色
+					span.input
+						select(name='role',id='user-role')
+							option(name='role', value ='2',selected) 游戏公司
+							option(name='role', value ='1') 游戏玩家
+							option(name='role', value ='3') 游戏管理员
+				li.clearfix
+					span.label
+						label(for='user-active') 是否激活
+					span.input
+						select(name='actived', id='user-actived')
+							option(name='actived', value ='1',selected) 激活
+							option(name='actived', value ='0') 未激活
+			.bottom-btn.text-center
+				a.large-green-btn.user-create-btn 创建用户
+
+
+block script
+	script(src='/js/jquery.pagination.js').
+	script(src='/js/admin/addUser.js').
+			

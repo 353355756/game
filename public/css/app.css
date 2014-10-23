@@ -1,0 +1,23 @@
+
+body {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif;
+  line-height: 1.4;
+  color: #5a5a5a;
+  background: #fff;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.error {
+  color: #FF2602;
+}
+
+.form-actions {
+	background: #fff;
+	border: 0;
+}
+
+.echoRoom, .comment {
+	padding: 15px 0;
+ 	border-top: 1px solid #e8e8e8;
+}

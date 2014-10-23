@@ -1,0 +1,57 @@
+{
+  "name": "xxj",
+  "description": "这个是对新学季制作的网站",
+  "version": "0.0.1",
+  "author": {
+    "name": "MaLiang",
+    "email": "zhili_posui@126.com"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "scripts": {
+    "start": "NODE_PATH=./app/controllers NODE_ENV=development ./node_modules/.bin/nodemon server.js",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec test/new/test-*.js"
+  },
+  "dependencies": {
+    "socket.io": "~0.9.16",
+    "express": "3.4.4",
+    "mongoose": "latest",
+    "mongoose-user": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "connect-mongo": "latest",
+    "connect-flash": "latest",
+    "view-helpers": "latest",
+    "jade": "0.35.0",
+    "async": "latest",
+    "forever": "latest",
+    "colors": "latest",
+    "consoler": "latest",
+    "generic-pool": "~2.0.4",
+    "redis": "latest",
+    "gm": "latest",
+    "moment": "latest",
+    "log4js": "~0.6.9",
+    "ws": "latest",
+    "ndir": "~0.1.5",
+    "underscore": "~1.5.2",
+    "thrift": "latest",
+    "soap": "~0.3.2",
+    "nodemailer": "~0.5.15",
+    "req-timeout": "~1.0.2",
+    "rate-limiter": "~0.2.0",
+    "qkapliy": "0.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "latest",
+    "mocha": "latest",
+    "should": "latest",
+    "supertest": "latest"
+  },
+  "keywords": [
+    "Qiaoker",
+    "real-time communication"
+  ]
+}

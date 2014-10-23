@@ -1,0 +1,11 @@
+{
+    "appenders": [{
+        "type": "console",
+        "absolute": true,
+        "filename": "/data/log/xxj.log",
+        "maxLogSize": 1024000,
+        "backups": 15,
+        "category": "log"
+    }
+    ]
+}

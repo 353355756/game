@@ -1,0 +1,30 @@
+extends ../layouts/default
+block style
+block content
+	input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
+	section.admin.clearfix
+		input(type='hidden',class='game-num',value= total)
+		include ./_left_aside
+
+		section.pull-right
+			h2
+				创建游戏
+			ul.horizontal-ul.bind-ul
+				li.clearfix
+					span.label
+						label(for='game-company') 游戏公司
+					span.input
+						input(type='text',id='game-compan',name='ycompany')
+				li.clearfix
+					span.label
+						label(for='game-name') 游戏名称
+					span.input
+						input(type='text',id='game-name',name= 'name')
+			.bottom-btn.text-center
+				a.large-green-btn.game-create-btn 创建游戏
+
+
+block script
+	script(src='/js/jquery.pagination.js').
+	script(src='/js/admin/addGame.js').
+			

@@ -1,0 +1,82 @@
+extends ./layouts/default
+block content
+	section.clearfix
+		aside.user-info
+			img(src='/avatar/#{user.avatar}')
+			p #{user.nickname}
+			.hr
+			ul.user-info-list
+				li.current
+					a(href='/userinfo/#{user._id}') 基本信息
+				li
+					a(href='/password/#{user._id}') 密码 
+				li
+					a(href='/userphoto/#{user._id}') 头像
+
+		section.user-info
+			h2 基本信息
+			.user-info-container
+				ul
+					li.clearfix
+						span.label
+							label 邮箱帐号：
+						span.input #{user.email}
+					li.clearfix
+						span.label
+							if user.roleText == 'organization'
+								label 机构名称:
+							else
+								label 昵称：
+						span.input
+							input(type='text',name='nickname', class='nick-name' value='#{user.nickname}')
+						span.error.nick-name-error
+					li.clearfix
+						span.label
+							if user.roleText == 'organization'
+								label 联系人：
+							else
+								label 真实姓名：
+						span.input
+							input(type='text',name='realname', class='real-name' value='#{user.realname}')
+						span.error.real-name-error
+					li.clearfix
+						span.label
+							label 性别：
+						span.input
+							if user.gender == 1
+								input(type='radio', name='gender', value='1', checked)
+							else
+								input(type='radio', name='gender', value='1')
+							span 男
+							if user.gender == 2
+								input(type='radio', name='gender', value='2', checked)
+							else
+								input(type='radio', name='gender', value='2')
+							span 女
+					li.clearfix
+						span.label
+							label 绑定手机：
+						span.input.phone-span
+							if user.mobile
+								span.phone #{user.mobile}
+								span.modify-mobile [修改]
+							else
+								input(type="text", class="mobile-modify-value",name ="mobile")
+								
+						span.error.phone-error
+					li.clearfix.user-brief-li
+						span.label
+							if user.roleText == 'organization'
+								label 机构简介：
+							else
+								label 个人简介：
+						span.input
+							textarea.user-brief(name='brief') #{user.brief}
+			.hr
+			div.text-center
+				a.normal-orange-btn.user-info-submit 变更信息
+						
+		input#hiden-value(type='hidden', value=csrf_token, name='_csrf') 
+block script
+	script(src='/js/userinfo.js').
+			

@@ -1,0 +1,11 @@
+aside.user-info
+	img(src='/avatar/#{user.avatar}')
+	p #{user.nickname}
+	.hr
+	ul.user-info-list
+		li
+			a(href='/userinfo/#{user._id}') 基本信息
+		li
+			a(href='/password/#{user._id}') 密码 
+		//li
+		//	a(href='/userphoto/#{user._id}') 头像

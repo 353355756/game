@@ -1,0 +1,43 @@
+header
+	.navbar.navbar-inverse
+		.navbar-inner
+			.container
+				ul(class='nav')
+					if (req.isAuthenticated())
+						if user.roleText == 'admin' 
+							li
+								a(href='/admin/users') 管理员中心
+						if user.roleText == 'gadmin'
+							li
+								a(href='/admin/users') 管理员中心
+						if user.roleText == 'gamegs'
+							li
+								a(href='/show/games') 管理员中心
+					else
+						if !isLogin
+							li.pull-right
+								a(href='/login') 登陆
+							li.pull-right
+								a(href='/signup') 注册
+				if (req.isAuthenticated())
+					.pop-user-info
+						p.user-show
+							if !user.actived
+								span.active-span 
+									请
+									a.green(href='/active') 激活
+									帐号
+							img(src='/avatar/#{user.avatar}')
+						.pop-info
+							ul
+								li.first
+									p #{user.nickname}
+								li.second
+									a(href='/userinfo/#{user.id}') 个人信息
+								li.third
+									a(href='/logout') 退出
+							span.arrow
+				if isLogin
+					img.img-phone(src='/img/phone-img.png')
+					p.link-phone 400-616-5105
+

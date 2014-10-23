@@ -1,0 +1,32 @@
+extends ../layouts/login
+block content
+  section.login-container
+    form.login-form(action='/login',method='post')
+      input(type='hidden', name='_csrf', value="#{csrf_token}")
+      .login-container-div
+        .login-slider-div
+          ul.login-slider-ul
+            li.current(center)
+              img.temp-login-img(src='/img/temp_loginImg.jpg')
+        .login-container-buttons-div.clearfix
+          p.white #{message}
+          .user-name-div
+            input.user-input-text.input.login-user-name(name='email',tabindex='1',type='text')
+            span.icon
+            span.tips 请输入邮箱帐号
+          .user-pw-div
+            input.user-input-text.input.login-user-password(name='password',tabindex='2',type='password')
+            span.icon
+            span.tips 请输入密码
+          .user-login-div
+            a.user-login-btn(tabindex='3') 登陆
+          .client-soft-download-btn-div.hidden
+            a.client-soft-download-btn(href='#') 下载新学季软件
+          .user-check-div.clearfix(style='margin-left:1px;')
+            span.check-box
+            span 两周内自动登陆
+          .user-forget-div
+            a(href='/forgetpassword') 忘记密码
+block script
+  script(src='/js/login.js').
+    

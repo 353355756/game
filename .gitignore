@@ -1,0 +1,15 @@
+node_modules
+*.log
+log/
+
+public/courseImg
+public/temp
+public/pdf
+public/appTeacherImg
+public/upload
+public/avatar
+public/bindImg
+*.rdb
+*.swp
+.idea/
+sandbox/

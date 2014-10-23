@@ -1,0 +1,12 @@
+aside.pull-left
+	ul
+		if user.roleText == 'admin'
+			li
+				a.normal-orange-btn(href='/admin/users') 用户列表
+			li
+				a.normal-orange-btn(href='/show/games') 游戏列表
+		if user.roleText == 'gadmin'
+			li
+				a.normal-orange-btn(href='/admin/users') 用户列表
+			li
+				a.normal-orange-btn(href='/show/games') 游戏列表

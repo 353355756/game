@@ -1,0 +1,235 @@
+#picker{
+	margin-bottom:10px;
+	margin-top: 20px;
+}
+
+#picker table,#picker td{
+	border-collapse:collapse;
+	text-align:center;
+}
+
+.qkSchePage{
+	padding-top:10px;
+	margin-top: 20px;
+	width:960px;
+	background-color: #F1F1F1;
+}
+
+
+.qkSchePage .qkTimeTable{
+  width:960px;
+  color: #525252;
+  padding-left: 10px;
+  
+}
+.qkSchePage .qkTimeTable table{
+	text-align: center;
+	font-size: 12px;
+	margin-top: 2px;
+}
+#picker .qkSchePage .qkTimeTable table.hRuler td{
+	text-align: left;
+}
+.qkSchePage .qkTimeTable table.hRuler td{
+	text-align: left;
+}
+.qkSchePage .timeAjuster{
+	cursor:pointer;
+	height:12px;
+}
+.qkSchePage #sh_plus,.qkSchePage #sm_plus{
+	background:url("/img/Buttons.png") 16px -984px no-repeat;
+}
+.qkSchePage #sh_minus,.qkSchePage #sm_minus{
+	background:url("/img/Buttons.png") -20px -984px no-repeat;
+}
+.qkSchePage .timeInput{
+	width:36px;
+	height:36px;
+	font-size:14px;
+	border:1px solid #729D18;
+	text-align:center;
+	color:#525252;
+	line-height:36px;
+}
+.qkSchePage #endHour,.qkSchePage #endMinute{
+	border:none;
+	background-color:#FA6900;
+	color:#fff;
+}
+.qkSchePage .chSlider{
+	width: 600px;
+	position: relative;
+}
+.qkSchePage .chSlider .control-circle{
+	width: 17px;
+	height: 17px;
+	display: block;
+	position: absolute;
+	background: url("/img/Buttons.png") -74px -988px no-repeat;
+	top: -5px;
+	left: 0px;
+	cursor: pointer;
+}
+.qkSchePage .chSlider ul{
+	width: 571px;
+	height: 6px;
+	margin: 0px auto;
+}
+.qkSchePage .chSlider ul li{
+	border: 1px solid #DBDBDB;
+	float: left;
+	width: 79px;
+	height: 6px;
+	background-color: #FFF;
+	cursor: pointer;
+}
+.qkSchePage .chSlider ul li.first{
+	border: 0px;
+	width: 2px;
+	background-color: #F1F1F1;
+}
+.qkSchePage .chSlider ul li.selected{
+	background-color: #FA6900;
+}
+.qkSchePage .chSlider .showTimeSplit{
+	margin-top:5px;
+}
+
+.qkSchePage .qkCalender{
+  display:block;
+  border:1px solid #ECEAE6;
+  width:380px;
+  margin:0 auto;
+  cursor:default;
+}
+.qkSchePage .qkCalender .thead{
+	height: 32px;
+	line-height: 32px;
+	background-color: #556270;
+}
+.calenderTable tr{
+  height:35px;
+
+}
+.qkSchePage .qkProgress{
+	width:90%;
+	margin-left:5%;
+}
+.qkSchePage .qkProgress .progressLocked{
+	height:10px;
+	background-color:#665F52;
+}
+.qkSchePage .qkProgress .progressScheduled{
+	background-color:#4DA1BD;
+}
+.qkSchePage .qkProgress .progressReserved{
+	border:1px solid #D7D4C9;
+	border-radius:5px;
+	background-color:#E2E0D8;
+}
+.qkSchePage .qkCalender #mPrev{
+	color:#fff;
+	background: url("/img/Buttons.png") -100px -984px no-repeat #556270;
+}
+.qkSchePage .qkCalender #mNow{
+	background-color:#556270;
+	color:#fff;
+	width:200px;
+	text-align: center
+}
+.qkSchePage .qkCalender #mNext{
+	color:#fff;
+	background: url("/img/Buttons.png") -124px -982px no-repeat #556270;
+}
+.qkSchePage .qkCalender #mPrev.disabled{
+	color:#666052;
+}
+.qkSchePage .qkCalender .monthAjuster{
+	cursor:pointer;
+}
+.qkSchePage .qkCalender .weekDay{
+	background-color: #FFF;
+}
+.qkSchePage .qkCalender .weekDay td{
+	color:#999687;
+}
+.qkSchePage .qkCalender .calDays{
+	height:25px;
+	background-color:#fff;
+	padding-left: 5px;
+	width:25px;
+}
+.qkSchePage .qkCalender .calDays span{
+	display:block;
+	width:24px;
+	height:24px;
+	line-height:24px;
+	border-radius:50px;
+	margin-left:10px;
+	border:1px solid #D5D5D5;
+	background-color:#fff;
+}
+.qkSchePage .qkCalender .noDay span{
+	display:block;
+	width:24px;
+	height:24px;
+	border-radius:50px;
+	background-color:#F3F1EB;
+	border:1px solid #F3F1EB;
+	margin-left:10px;
+}
+.qkSchePage .qkCalender .disabled span{
+	display:block;
+	width:24px;
+	height:24px;
+	line-height:24px;
+	border-radius:50px;
+	background-color:#E5E5E5;
+	border:1px solid #E5E5E5;
+	margin-left:10px;
+	color:#525252;
+}
+.qkSchePage .qkCalender .selected span{
+	display:block;
+	width:24px;
+	height:24px;
+	line-height:24px;
+	border-radius:50px;
+	margin-left:10px;
+	border:1px solid #FA6900;
+	background-color:#FA6900;
+	color:#fff;
+}
+.qkSchePage .qkCalender .dame span{
+	display:block;
+	width:24px;
+	height:24px;
+	line-height:24px;
+	border-radius:50px;
+	margin-left:10px;
+	border:1px solid #D96784;
+	background-color:#D96784;
+	color:#fff;
+}
+.qkSchePage .qkCalender .conflicted span{
+	color:#fff;
+	display:block;
+	width:24px;
+	height:24px;
+	line-height:24px;
+	border-radius:50px;
+	margin-left:10px;
+	border:1px solid #665F52;
+	background-color:#665F52;
+}
+.hRuler{
+	width:100%; 
+	text-align: right;
+}
+.borderBottomDotted{
+	border-bottom:1px dotted #ccc;
+}
+.calenderTable{
+  text-align: center;
+}

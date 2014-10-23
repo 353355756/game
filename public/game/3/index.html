@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>拔胡子</title>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+    <meta name="viewport" content="width=321,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+<body style="padding:0; margin: 0; background: #000;">
+<canvas id="gameCanvas" width="321" height="480"></canvas>
+<script src="cocos2d.js"></script>
+<script>
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+            WeixinJSBridge.invoke('shareTimeline',{
+                    "img_url": "http://1.unplugbeard1.sinaapp.com/res/HD/old_pepel.gif",
+                    "img_width": "200",
+                    "img_height": "200",
+                    "link": "http://1.unplugbeard1.sinaapp.com/",
+                    "desc": "拔胡子",
+                    "title": "拔胡子"
+                }, function(res) {
+                    //_report('timeline', res.err_msg);
+                });
+            });
+    }, false);
+
+</script>
+</body>
+</html>

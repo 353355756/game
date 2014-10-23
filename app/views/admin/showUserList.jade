@@ -1,0 +1,41 @@
+extends ../layouts/default
+block style
+block content
+	input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
+	section.admin.clearfix
+		input(type='hidden',class='user-num',value= total)
+		input(type='hidden', class='query-type', value= type)
+		include ./_left_aside
+
+		section.pull-right.right-section
+			h2
+				用户列表
+				a.pull-right.normal-orange-btn(href='/admin/user') 创建用户
+			ul.select-list
+				li
+					a.all(href='/admin/users') 全部
+				li
+					a.admin(rel='admin' href='/admin/users?type=admin') 管理员
+			div.query.clearfix
+				input.pull-left.query-name(type='text', placeholder='输入用户昵称或者邮箱', value= nickname)
+				a.pull-right.normal-orange-btn.query-btn 查询
+			table.normal-table.user-table
+				thead
+					tr
+						th(style='width:10%') 用户id
+						th(sytle='width:15%') 邮箱
+						th(style='width:10%') 用户昵称
+						th(style='width:10%') 真实姓名
+						th(style='width:10%') 用户角色
+						th(style='width:15%') 用户电话
+						th(style='width:10%') 是否激活
+						th(style='width:20%') 创建时间
+						th(style='width:10%;text-align:center') 操作
+				tbody
+			.qk-page
+
+
+block script
+	script(src='/js/jquery.pagination.js').
+	script(src='/js/admin/showUserList.js').
+			

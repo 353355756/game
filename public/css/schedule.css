@@ -1,0 +1,435 @@
+.schedule-div{
+	position: relative;
+	padding-top:20px;
+	min-height: 800px;
+}
+.schedule-div .schedule-div-left{
+	float: left;
+	width: 810px;
+}
+
+.schedule-div .schedule-div-left .schedule-div{
+	position: relative;	
+}
+.schedule-div .schedule-div-left h2{
+	float: left;
+	font-weight: bold;
+	font-size: 16px;
+	color: #525252;
+	height: 28px;
+	line-height: 28px;
+	margin-top: 0px;
+	border:0px solid #fff;
+}
+.schedule-div .schedule-div-left .schedule-div-left-btn{
+	float: left;
+	margin-left: 20px;
+}
+.schedule-div .schedule-div-left .schedule-div-left-btn a{
+	float: left;
+	display: block;
+	width: 40px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}
+.schedule-div .schedule-div-left .schedule-div-left-btn a.show-list{
+	color: #fff;
+	background: url("/img/Buttons.png") 0px -118px no-repeat;
+	text-align: center;
+	margin-right: 20px;
+	font-size: 12px;
+
+}
+.schedule-div .schedule-div-left .schedule-div-left-btn a.show-list:hover{
+	background: url("/img/Buttons.png") -50px -118px no-repeat;
+}
+
+.schedule-div .schedule-div-left .schedule-div-left-btn a.show-prev{
+	width: 29px;
+	font-weight: bold;
+	font-size: 16px;
+	background: url("/img/Buttons.png") 0px -280px no-repeat;
+}
+
+.schedule-div .schedule-div-left .schedule-div-left-btn a.show-prev:hover{
+	background: url("/img/Buttons.png") -40px -280px no-repeat;
+}
+
+.schedule-div .schedule-div-left .schedule-div-left-btn a.show-next{
+	width: 30px;
+	font-weight: bold;
+	font-size: 16px;
+	background: url("/img/Buttons.png") 0px -280px no-repeat;
+}
+
+.schedule-div .schedule-div-left .schedule-div-left-btn a.show-next:hover{
+	background: url("/img/Buttons.png") -40px -280px no-repeat;
+}
+
+
+
+.schedule-div .schedule-div-left .schedule-div-right-btn{
+	float: right;
+	width: 90px;
+
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day .schedule-table-tr-td-wrapper{
+	position: relative;
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day .schedule-table-tr-td-wrapper a{
+	display: block;
+}
+.schedule-div .schedule-div-left .schedule-div-right-btn a{
+	float: left;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 12px;
+	font-color:#525252;
+	display: block;
+	background: url("/img/Buttons.png") 0px -280px no-repeat;
+	cursor: pointer;
+}
+.schedule-div .schedule-div-left .schedule-div-right-btn a:hover{
+	background: url("/img/Buttons.png") -40px -280px no-repeat;
+}
+.schedule-div .schedule-div-left .schedule-div-right-btn a.current{
+	color: #fff;
+	background: url("/img/Buttons.png") 0px -118px no-repeat;
+}
+.schedule-div .schedule-div-left .schedule-div-right-btn a.current:hover{
+	background: url("/img/Buttons.png") -50px -118px no-repeat;
+}
+.schedule-div .schedule-div-left .schedule-table-div{
+	position: relative;
+	margin-top:20px;
+}
+.schedule-div .schedule-div-left .schedule-table{
+	display: block;
+	width:815px;
+	clear: both;
+}
+.schedule-div .schedule-div-left .schedule-table thead tr th{
+	width: 105px;
+	height: 30px;
+	font-size: 12px;
+	color: #525252;
+	text-align: center;
+}
+.schedule-div .schedule-div-left .schedule-table thead tr th.today{
+	font-weight: bold;
+}
+.schedule-div .schedule-div-left .schedule-table thead tr th.schedule-table-time{
+	height: 30px;
+	width: 65px;
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-time{
+	height: 60px;
+	width: 65px;
+	color: #999999;
+}
+
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day{
+	border-right: 1px solid #E5E5E5;
+	border-top: 1px solid #E5E5E5;
+	border-left: 1px solid #E5E5E5;
+	position: relative;
+}
+.schedule-table tbody tr td{
+	position: relative;
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day .schedule-table-line{
+	width: 100%;
+	height: 59px;
+	border-bottom: 1px solid #E5E5E5;
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day  .show-lesson-div{
+	position: absolute;
+	top:0px;
+	width: 95px;
+	z-index: 10;
+	overflow: hidden;
+
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day  .show-lesson-div a{
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+ a.recorded-icon{
+	display: block;
+	position: absolute;
+	right: 0px;
+	bottom: 1px;
+	width: 18px;
+	height: 16px;
+	background:url("/img/Buttons.png") -114px -939px no-repeat;	
+	cursor: pointer;
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day  .show-lesson-div a.recorded-icon:hover{
+	background:url("/img/Buttons.png") -192px -939px no-repeat;
+}
+ a.recorded-icon{
+	display: block;
+	position: absolute;
+	right: 0px;
+	bottom: 1px;
+	width: 18px;
+	height: 16px;
+	background:url("/img/Buttons.png") -114px -939px no-repeat;
+	
+	cursor: pointer;
+}
+ a.recorded-icon:hover{
+	background:url("/img/Buttons.png") -192px -939px no-repeat;
+
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day  .show-lesson-div p{
+	height: 1.5em;
+	line-height: 1.5em;
+	padding-left:5px;
+	overflow: hidden;
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day  .show-lesson-div p{
+	height: 1.5em;
+	line-height: 1.5em;
+	padding-left:5px;
+	overflow: hidden;
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day .done{
+	background-color: #F1F1F1;
+	text-align: left;
+	font-size: 12px;
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day .doing{
+	background-color: #FA6900;
+	text-align: left;
+	font-size: 12px; 
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day .todo{
+	background-color: #00AEEF;
+	text-align: left;
+	font-size: 12px; 
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day .done p {
+	color: #A5A5A5;
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day .doing p {
+	color:#FFFFFF;
+}
+.schedule-div .schedule-div-left .schedule-table .schedule-table-day .todo p {
+	color:#FFFFFF;
+	display: block;
+}
+
+.schedule-table tbody tr td .schedule-day-box{
+	width: 740px;
+	height: 60px;
+	border-right: 1px solid #E5E5E5;
+	border-top: 1px solid #E5E5E5;
+	border-left: 1px solid #E5E5E5;
+}
+.schedule-table tbody tr td .schedule-day-box.last{
+	border-bottom: 1px solid #E5E5E5;
+}
+
+.schedule-table .select_day_show_div{
+	position: absolute;
+	left: 70px;
+	width: 91%;
+	font-size: 12px;
+}
+.schedule-table .select_day_show_div.done{
+	background-color: #F1F1F1;
+}
+.schedule-table .select_day_show_div.done a{
+	color: #A5A5A5;
+}
+.schedule-table .select_day_show_div.doing{
+	background-color: #FA6900;
+}
+.schedule-table .select_day_show_div.doing a{
+	color: #FFFFFF;
+}
+.schedule-table .select_day_show_div.todo{
+	background-color: #00AEEF;
+}
+.schedule-table .select_day_show_div.todo a{
+	color: #FFFFFF;
+}
+.schedule-table .select_day_show_div a.day_text{
+	padding-top: 5px;
+	padding-left: 10px;
+	display: block;
+	position: relative;
+}
+.schedule-table .select_day_show_div a span{
+	float: left;
+	display: block;
+	margin-right: 20px;
+}
+.schedule-div .schedule-div-left .today-rect{
+	width: 105px;
+	height: 100%;
+	position: absolute;
+	border:1px solid #FA6900;
+	top:0px;
+}
+
+
+/*月的样式*/
+.schedule-div .schedule-div-left .schedule-table .month_tr{
+	height: 135px;
+	border-top: 1px solid #E5E5E5;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr.last{
+	border-bottom: 1px solid #E5E5E5;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td{
+	width: 115px;
+	height: 135px;
+	border-left: 1px solid #E5E5E5;
+	vertical-align:top;
+	position: relative;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td.last{
+	border-right: 1px solid #E5E5E5;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .pop_month_div{
+	position: absolute;
+	width: 200px;
+	border:7px solid #E5E5E5;
+	display: none;
+	top: 0;
+	left: 0;
+	z-index: 90;	
+	background-color: #E5E5E5;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .pop_month_div div{
+	height: 25px;
+	line-height: 25px;
+	margin-bottom: 1px;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .pop_month_div div a{
+	display: block;
+	padding-left: 5px;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .pop_month_div div.done{
+	background-color: #F1F1F1;
+	
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .pop_month_div div.done a{
+	color: #A5A5A5;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .pop_month_div div.doing{
+	background-color: #FA6900;
+
+}
+
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .pop_month_div div.doing a{
+	color: #FFFFFF;
+}
+
+
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .pop_month_div div.todo{
+	background-color: #00AEEF;
+	
+}
+
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .pop_month_div div.todo a{
+	color: #FFFFFF;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .show_month_div{
+	display: block;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .show_month_div div{
+	height: 25px;
+	line-height: 25px;
+	margin-bottom: 1px;
+	padding-left: 5px;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .show_month_div div a{
+	display: block;
+	font-size: 12px;
+	overflow: hidden;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .show_month_div div.done{
+	background-color: #F1F1F1;
+	
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .show_month_div div.done a{
+	color: #A5A5A5;
+}
+
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .show_month_div div.doing{
+	background-color: #FA6900;
+	
+}
+
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .show_month_div div.doing a{
+	color: #FFFFFF;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .show_month_div div.todo{
+	background-color: #00AEEF;
+	
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_td .show_month_div div.todo a{
+	color: #FFFFFF;
+}
+.schedule-div .schedule-div-left .schedule-table .month_tr .month_today{
+	border:1px solid #FA6900;
+}
+.schedule-div .schedule-div-left .current-time{
+	position: absolute;
+	width: 749px;
+	height: 12px;]
+	display: block;
+	left:53px;
+	top: 200px;
+	z-index: 11;
+	background:url("/img/schedule.png") 0px -4px no-repeat;
+}
+.schedule-div .schedule-div-right{
+	float: right;
+	width: 140px;
+}
+.schedule-div .schedule-div-right .show_month{
+	margin-top: 60px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 12px;
+	color: #525252;
+}
+.schedule-div .schedule-div-right ul{
+	margin-top: 1px;
+}
+.schedule-div .schedule-div-right ul li{
+	height: 25px;
+	line-height: 25px;
+	margin-bottom: 3px;
+	
+	font-size: 12px;
+	padding-left:5px;
+	cursor: pointer;
+}
+.schedule-div .schedule-div-right ul li a{
+	color: #525252; 
+}
+.schedule-div .schedule-div-right ul li a:hover{
+	color: #729D18;
+}
+.schedule-div .schedule-div-right ul li.current{
+	color:#FFF;
+	background: url("/img/Buttons.png") 0px -1017px no-repeat ;
+}
+.schedule-div .schedule-div-right ul li.current a{
+	color: #FFF;
+}
+.schedule-div .schedule-div-right ul li.current a:hover{
+	color: #FFF;
+}
+

@@ -1,0 +1,26 @@
+extends ../layouts/default
+block style
+block content
+	input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
+	section.admin.clearfix
+		input(type='hidden',class='game-num',value= total)
+		include ./_left_aside
+		section.pull-right.right-section
+			h2
+				游戏列表
+			table.normal-table.user-table
+				thead
+					tr
+						th(style='width:20%') 游戏id
+						th(sytle='width:20%') 游戏名称
+						th(style='width:20%') 所属公司
+						th(style='width:20%') 创建时间
+						th(style='width:20%') 操作
+				tbody
+			.qk-page
+
+
+block script
+	script(src='/js/jquery.pagination.js').
+	script(src='/js/company/showGameList.js').
+			

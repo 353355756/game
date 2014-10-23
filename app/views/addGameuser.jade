@@ -1,0 +1,11 @@
+extends ./layouts/default
+block style
+	link(rel="stylesheet", href="/css/index.css").
+
+block main
+	input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
+	div(id="myCarousel", class="carousel slide") aaaaaaaa
+
+block script
+	script(src="/js/qkSlider.js").
+	script(src="/js/game.js").

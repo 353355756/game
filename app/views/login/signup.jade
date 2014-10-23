@@ -1,0 +1,33 @@
+extends ../layouts/default
+block content
+  p= error
+  h1.register-h1 用户注册
+  form.register-form(action="/signup", method="post")
+    input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
+    .register-inner
+      ul.horizontal-ul
+        li.clearfix
+          span.label 昵称
+          span.input
+            input.nickname(type='text', name="nickname", placeholder='昵称')
+          span.error-tips
+        li.clearfix
+          span.label 邮箱
+          span.input
+            input.email(type='text', name="email", placeholder='邮箱')
+          span.error-tips
+        li.clearfix
+          span.label 密码
+          span.input
+            input.password(type='password', name="password", placeholder='密码')
+          span.error-tips
+        li.clearfix
+          span.label 密码重复
+          span.input
+            input.re-pass(type='password', name="re-password", placeholder='密码重复')
+          span.error-tips
+    .register-bottom
+      a.normal-gray-btn(href='/') 返回首页
+      a.normal-green-btn.register-btn 确认注册
+block script
+  script(src='/js/register.js').
