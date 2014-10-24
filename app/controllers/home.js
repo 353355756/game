@@ -14,6 +14,17 @@ var commonfunction = require('../../common/commonfunction');
 
 exports.login = function (req, res) {
   if (req.isAuthenticated()) {
+    var user = req.user;
+    if(user.role == status.Role.GAMEWJ){
+      user.roleText = 'gamewj';
+    }else if(user.role == status.Role.GAMEGS){//把学生的角色改为机构
+      user.roleText = 'gamegs';
+    }else if (user.role == status.Role.ADMIN){
+      user.roleText = 'admin';
+    }else if (user.role == status.Role.GADMIN){
+      user.roleText = 'gadmin';
+    }
+    res.locals.user = user;
     var uid = req.user._id;
     var token = commonfunction.gen_session(uid.toString());
     res.redirect("/") ;
@@ -39,7 +50,7 @@ exports.checkLogin = function(req, res){
   }else{
     res.locals.error = true;
     req.flash('error',"邮箱或密码错误");
-    res.redirect('/login');
+    res.redirect('/');
   }
 }
 

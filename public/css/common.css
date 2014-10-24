@@ -41,7 +41,7 @@ h1{
   margin: 0px;
 }
 a{
-  color: #A5A5A5;
+  color: #303030;
   cursor: pointer;
 }
 a:hover, a:focus{
@@ -61,7 +61,7 @@ dl dd{
 	margin-left: 0px;
 }
 body{
-	color:#A5A5A5;
+	color:#303030;
   padding: 0;
 }
 .breadcrumb{
@@ -128,10 +128,10 @@ body{
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-  background: url("/img/Buttons.png") 0px -319px no-repeat;
+  background: rgb(92, 92, 92);
 }
 .normal-orange-btn:hover{
-  background: url("/img/Buttons.png") -130px -319px no-repeat;
+  background: rgb(77, 77, 77);
   color: #fff;
 }
 .small-green-btn{
@@ -378,7 +378,7 @@ body{
   padding: 8px;
 }
 .qk-page a:hover,.qk-page .current{
-  background-color: #4DA1BD;
+  background-color: rgba(3, 3, 3, 0.65);
   color: #FFFFFF;
 }
 

@@ -23,7 +23,7 @@ $(document).ready(function(){
 					alert("修改错误");
 				}else{
 					alert("修改成功，请登陆");
-					window.location.href='/login'
+					window.location.href='/'
 				}
 			}
 		});

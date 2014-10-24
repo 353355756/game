@@ -14,10 +14,10 @@ fs.readdirSync(__dirname + '/../app/controllers').forEach(function (file) {
 
 module.exports = function (app) {
  // app.get('/game/:id',ctrls['game.js'].game);
-  app.get('/',ctrls['home.js'].home);
-  app.get('/login',ctrls['home.js'].login);
-  app.post('/login', passport.authenticate('local', {
-      failureRedirect: '/login',
+  //app.get('/',ctrls['home.js'].home);
+  app.get('/',ctrls['home.js'].login);
+  app.post('/', passport.authenticate('local', {
+      failureRedirect: '/',
       failureFlash: true,
     }),ctrls['home.js'].checkLogin);
   //註冊頁面

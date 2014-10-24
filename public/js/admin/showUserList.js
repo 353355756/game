@@ -49,7 +49,7 @@ $(document).ready(function(){
 								html += "<td>未激活</td>";
 							}
 							html += "<td>"+ changeTimeFormat(users[o].created,3) +"</td>";
-							html += "<td><a class='orange deleteUser' style='margin-left:15px;float:left;' rel='"+users[o].id+"'>删除</a></td>";
+							html += "<td><a class='orange deleteUser' style='margin-left:25px;float:left;' rel='"+users[o].id+"'><i class='icon-remove'></i></a></td>";
 							html += "</tr>";
 						}
 					}else{

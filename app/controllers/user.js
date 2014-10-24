@@ -393,10 +393,10 @@ exports.getUsersByCondition = function (req, res) {
         var obj = {
           actived: user.actived,
           created: user.created.getTime(),
-          email: user.email,
+          email: user.email == undefined?"未填写":user.email,
           id: user._id,
           mobile: user.mobile == undefined?"未填写":user.mobile,
-          nickname: user.nickname,
+          nickname: user.nickname == undefined?"未填写":user.nickname,
           realname: user.realname == undefined?"未填写":user.realname,
           role: user.role,
         };

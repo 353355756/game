@@ -1,7 +1,7 @@
 extends ../layouts/login
 block content
   section.login-container
-    form.login-form(action='/login',method='post')
+    form.login-form(action='/',method='post')
       input(type='hidden', name='_csrf', value="#{csrf_token}")
       .login-container-div
         .login-slider-div

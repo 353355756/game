@@ -118,7 +118,7 @@
   font-size: 12px;
   height: 14px;
   line-height: 14px;
-  color: #ccc;
+  color: #919191;
   top:14px;
   left:35px;
 }
@@ -139,13 +139,13 @@
 }
 .login-container .login-container-div .login-container-buttons-div .user-login-div a{
   display: block;
-  background: url("/img/Buttons.png") 0px -1262px no-repeat;
+  background: rgb(126, 121, 121);
   text-align: center;
   color: #FFFFFF;
   cursor: pointer;
 }
 .login-container .login-container-div .login-container-buttons-div .user-login-div a:hover{
-  background: url("/img/Buttons.png") -110px -1262px no-repeat;
+  background: rgb(78, 78, 78);
 }
 .login-container .login-container-div .client-soft-download-btn-div{
   width: 260px;
