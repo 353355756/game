@@ -27,7 +27,12 @@ exports.login = function (req, res) {
     res.locals.user = user;
     var uid = req.user._id;
     var token = commonfunction.gen_session(uid.toString());
-    res.redirect("/") ;
+    //res.redirect("/") ;
+    res.render('login/index', {
+      title: '登陆',
+      message: res.locals.error,
+      isLogin: true
+    });
   } else {
     res.render('login/index', {
       title: '登陆',
@@ -77,7 +82,7 @@ exports.home = function (req, res) {
     var user = req.user;
     if(user.role == status.Role.GAMEWJ){
       user.roleText = 'gamewj';
-    }else if(user.role == status.Role.GAMEGS){//把学生的角色改为机构
+    }else if(user.role == status.Role.GAMEGS){
       user.roleText = 'gamegs';
     }else if (user.role == status.Role.ADMIN){
       user.roleText = 'admin';
