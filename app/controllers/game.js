@@ -17,6 +17,7 @@ var fs = require('fs');
 var assert= require('assert');
 var log4js = require("log4js");
 var log = log4js.getLogger('error');
+var util = require('../util');
 
 
 //创建游戏玩家
@@ -331,4 +332,8 @@ exports.openGame = function(req ,res){
       res.redirect("/game/"+gameid+"/index.html");
     }
   });
+}
+
+exports.uploadGameZip = function(req ,res){
+  
 }

@@ -20,11 +20,16 @@ block content
 						label(for='game-name') 游戏名称
 					span.input
 						input(type='text',id='game-name',name= 'name')
+				li.clearfix
+					form.gameupload-form(method='post',enctype='multipart/form-data',action='')
+						input.gamezip(type='file',name='upfile')
+						a.normal-orange-btn.zip-submit 上传项目
 			.bottom-btn.text-center
 				a.large-green-btn.game-create-btn 创建游戏
 
 
 block script
 	script(src='/js/jquery.pagination.js').
+	script(src='/js/jquery.form.js').
 	script(src='/js/admin/addGame.js').
 			

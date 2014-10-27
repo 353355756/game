@@ -31,4 +31,30 @@ $(document).ready(function(){
 	        }
 		})
 	})
+	$('.gamezip').bind('change',function(){
+		var value = $(this).val();
+		if(!/\.(zip)$/.test(value)){
+			alert("上传文件的类型不正确");
+			$(this).val('');
+			return false;
+		}else{
+			var option ={
+				url: '/gameupload',
+				type: 'post',
+				dataType: 'json',
+				success: function(data){
+					if(!data.error){
+						$('#hiden-value').val(data._csrf);
+					}else{
+						alert(data.msg);
+					}
+				},
+				error: function(data){
+					alert(data);
+				}
+			}
+			$('.gameupload-form').ajaxForm(option);
+			$('.gameupload-form').submit();
+		}
+	})
 })

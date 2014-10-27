@@ -62,5 +62,6 @@ module.exports = function (app) {
   app.get('/show/gameUsers/:gid', auth.authLogin, ctrls['game.js'].showGameUsers);
   //打开游戏
   app.get('/open/game/:gid', ctrls['game.js'].openGame);
+  app.post('/gameupload', ctrls['game.js'].uploadGameZip);
 };
 

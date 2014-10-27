@@ -788,3 +788,16 @@ input.error-img-input {
       padding: 0px;
       margin: 0px;
     }
+    .admin input.gamezip{
+      position: absolute;
+      opacity: 0;
+      filter: alpha(opacity:0);
+      height: 40px;
+      top: 1px;
+      cursor: pointer;
+      border: 0px solid #FFF;
+      width: 120px;
+    }
+    .zip-submit{
+      opacity: 1;
+    }
