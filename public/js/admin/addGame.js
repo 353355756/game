@@ -53,8 +53,8 @@ $(document).ready(function(){
 					alert(data);
 				}
 			}
-			$('.gameupload-form').ajaxForm(option);
-			$('.gameupload-form').submit();
+			$('.gameuploadform').ajaxForm(option);
+			$('.gameuploadform').submit();
 		}
 	})
 })

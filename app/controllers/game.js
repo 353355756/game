@@ -17,7 +17,7 @@ var fs = require('fs');
 var assert= require('assert');
 var log4js = require("log4js");
 var log = log4js.getLogger('error');
-var util = require('../util');
+var util = require('./util');
 
 
 //创建游戏玩家
@@ -335,5 +335,34 @@ exports.openGame = function(req ,res){
 }
 
 exports.uploadGameZip = function(req ,res){
-  
+  var upload = __dirname+'/../../public/game/';
+  var files = req.files.upfile;
+  var fileName = files.originalname;
+  fileName = fileName.split('.');
+
+  var type = fileName[fileName.length-1];
+
+  if(!fs.existsSync(upload)){
+    fs.mkdirSync(upload,"777");
+  }
+  var newName = (new Date()).getTime()+Math.round(Math.random()*100)+'.'+type;
+  fs.rename(files.path,upload+newName,function(err){
+    if(err){
+      res.statusCode = 200;
+      res.setHeader('content-type', 'text/html');   
+      res.send({'error' : 1,msg:"上传失败，请重新上传"});
+    }else{
+      util.unzip(upload+newName,upload,function(err){
+        if(err){
+          res.statusCode = 200;
+          res.setHeader('content-type', 'text/html');   
+          res.send({'error' : 1,msg:"解压失败，请重新上传"});
+        }else{
+          res.statusCode = 200;
+          res.setHeader('content-type', 'text/html');   
+          res.send({msg:"上传成功",_csrf:res.locals.csrf_token});
+        }
+      });
+    }
+  });
 }

@@ -64,7 +64,7 @@ module.exports = function (app, config) {
     // bodyParser should be above methodOverride
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
-    app.use(multer({ dest: path.join(__dirname, 'files')}));
+    app.use(multer({ dest: path.join(__dirname, '../public/temp')}));
     app.use(methodOverride());
 
     // cookieParser should be above session

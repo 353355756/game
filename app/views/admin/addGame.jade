@@ -1,11 +1,9 @@
 extends ../layouts/default
 block style
 block content
-	input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
 	section.admin.clearfix
 		input(type='hidden',class='game-num',value= total)
 		include ./_left_aside
-
 		section.pull-right
 			h2
 				创建游戏
@@ -21,7 +19,8 @@ block content
 					span.input
 						input(type='text',id='game-name',name= 'name')
 				li.clearfix
-					form.gameupload-form(method='post',enctype='multipart/form-data',action='')
+					form.gameuploadform(method='post',enctype='multipart/form-data',action='/gameupload')
+						input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
 						input.gamezip(type='file',name='upfile')
 						a.normal-orange-btn.zip-submit 上传项目
 			.bottom-btn.text-center
