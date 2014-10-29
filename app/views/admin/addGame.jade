@@ -3,6 +3,7 @@ block style
 block content
 	section.admin.clearfix
 		input(type='hidden',class='game-num',value= total)
+		input.gamefilesname(type='hidden',value='')
 		include ./_left_aside
 		section.pull-right
 			h2
@@ -19,10 +20,14 @@ block content
 					span.input
 						input(type='text',id='game-name',name= 'name')
 				li.clearfix
+					span.label
+						label(for='game-name') 项目路径
+					span.input
+						input(type='text',id='game-name',name= 'name')
 					form.gameuploadform(method='post',enctype='multipart/form-data',action='/gameupload')
 						input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
 						input.gamezip(type='file',name='upfile')
-						a.normal-orange-btn.zip-submit 上传项目
+						a.zip-submit 上传项目
 			.bottom-btn.text-center
 				a.large-green-btn.game-create-btn 创建游戏
 block script

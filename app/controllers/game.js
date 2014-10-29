@@ -235,10 +235,22 @@ exports.adminCreateGame = function(req, res){
         }
       })
     },
-    createUser:['checkName',function (callback) {
-      new Game(game).save(function (err) {
+    createGame:['checkName',function (callback) {
+      new Game(game).save(function (err,game) {
         if (err) { callback(new Error(err.toString())); }
-        else { callback(null); }
+        else { callback(null,game); }
+      });
+    }],
+    updatefilesname:['createGame',function (callback,results) {
+      var gameId = results.createGame._id;
+      var filesName = body.filesName;
+      var upload = __dirname+'/../../public/game/';
+      fs.rename(upload+filesName+"/",upload+gameId+"/",function(err){
+        if (err) { 
+          callback(new Error(err.toString())); 
+        }else {
+          callback(); 
+        }
       });
     }],
   }, 
@@ -250,8 +262,7 @@ exports.adminCreateGame = function(req, res){
         msg: err.message,
         _csrf: res.locals.csrf_token
       });
-    }
-    else {
+    }else {
       res.send({
         status: 0,
         msg:"创建成功",
@@ -345,25 +356,27 @@ exports.uploadGameZip = function(req ,res){
   if(!fs.existsSync(upload)){
     fs.mkdirSync(upload,"777");
   }
-  var newName = (new Date()).getTime()+Math.round(Math.random()*100)+'.'+type;
-  fs.rename(files.path,upload+newName,function(err){
+  var newName = (new Date()).getTime()+Math.round(Math.random()*100).toString();
+  var filenewName = newName+'.'+type;
+  fs.mkdirSync(upload+newName,"777");
+  fs.rename(files.path,upload+newName+"/"+filenewName,function(err){
     if(err){
       res.statusCode = 200;
       res.setHeader('content-type', 'text/html');   
       res.send({'error' : 1,msg:"上传失败，请重新上传"});
     }else{
-      util.unzip(upload+newName,upload,function(err){
+      util.unzip(upload+newName+"/"+filenewName,upload+newName+"/",function(err){
         if(err){
           res.statusCode = 200;
           res.setHeader('content-type', 'text/html');   
           res.send({'error' : 1,msg:"解压失败，请重新上传"});
         }else{
-          fs.unlink(upload+newName,function(err){
+          fs.unlink(upload+newName+"/"+filenewName,function(err){
             log.error(err);
-          }); 
+          });
           res.statusCode = 200;
           res.setHeader('content-type', 'text/html');   
-          res.send({msg:"上传成功",_csrf:res.locals.csrf_token});
+          res.send({msg:"上传成功",filesName:newName,_csrf:res.locals.csrf_token});
         }
       });
     }

@@ -13,7 +13,8 @@ $(document).ready(function(){
 
 		var obj = {
 			game:game,
-			_csrf: $("#hiden-value").val()
+			_csrf: $("#hiden-value").val(),
+			filesName: $('.gamefilesname').val()
 		}
 		$.ajax({
 			url: '/admin/game',
@@ -45,6 +46,7 @@ $(document).ready(function(){
 				success: function(data){
 					if(!data.error){
 						$('#hiden-value').val(data._csrf);
+						$('.gamefilesname').val(data.filesName);
 					}
 					alert(data.msg);
 				},
