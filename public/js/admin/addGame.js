@@ -45,9 +45,8 @@ $(document).ready(function(){
 				success: function(data){
 					if(!data.error){
 						$('#hiden-value').val(data._csrf);
-					}else{
-						alert(data.msg);
 					}
+					alert(data.msg);
 				},
 				error: function(data){
 					alert(data);

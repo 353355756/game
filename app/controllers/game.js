@@ -358,6 +358,9 @@ exports.uploadGameZip = function(req ,res){
           res.setHeader('content-type', 'text/html');   
           res.send({'error' : 1,msg:"解压失败，请重新上传"});
         }else{
+          fs.unlink(upload+newName,function(err){
+            log.error(err);
+          }); 
           res.statusCode = 200;
           res.setHeader('content-type', 'text/html');   
           res.send({msg:"上传成功",_csrf:res.locals.csrf_token});

@@ -8,7 +8,7 @@ exports.unzip = function(zipPath,filePath,cb){
 		zip.extractAllTo(filePath, true);
 		cb();
  	}catch (err) {
-		log.error(err.message);
+		log.error(err);
 		cb(err);
  	}
 }
