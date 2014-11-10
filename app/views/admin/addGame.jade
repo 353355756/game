@@ -21,9 +21,9 @@ block content
 						input(type='text',id='game-name',name= 'name')
 				li.clearfix
 					span.label
-						label(for='game-name') 项目路径
+						label(for='game-path') 项目路径
 					span.input
-						input(type='text',id='game-name',name= 'name')
+						input(type='text',id='game-path',name= 'path')
 					form.gameuploadform(method='post',enctype='multipart/form-data',action='/gameupload')
 						input#hiden-value(type='hidden', value=csrf_token, name='_csrf')
 						input.gamezip(type='file',name='upfile')

@@ -7,7 +7,7 @@ var GameSchema = Schema({
   _id: Number,
   company : {type:Number, ref: 'User'},//所属公司
   name : { type: String},
-  gameFilePath : { type: String},
+  gameFilePath : String,
   created : { type: Date, default: Date.now },
   updated : { type: Date, default: Date.now },
 });

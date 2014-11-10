@@ -18,6 +18,7 @@ module.exports = {
     },
     session_secret: 'game',
     tmpDir: '/tmp',
+    url:'http://localhost:3000/',
   },
   production: {
     root: rootPath,
@@ -27,5 +28,6 @@ module.exports = {
     },
     session_secret: 'game',
     tmpDir: '/tmp',
+    url:'http://localhost:3000/',
   }
 };

@@ -300,6 +300,7 @@ exports.getGameByCondition = function (req, res) {
         res.send({
           status: 0,
           games: games,
+          url: config.url,
           _csrf: res.locals.csrf_token
         });
       }
@@ -340,7 +341,7 @@ exports.openGame = function(req ,res){
     }else if(!game){
       res.render('404');
     }else{
-      res.redirect("/game/"+gameid+"/index.html");
+      res.redirect("/game/"+gameid+"/"+game.gameFilePath);
     }
   });
 }
@@ -382,3 +383,123 @@ exports.uploadGameZip = function(req ,res){
     }
   });
 }
+
+exports.showGame = function(req ,res){
+  Game.findById(req.params.gid).populate('company').exec(function(err,game){
+    if(err){
+      res.render('404');
+    }else if(game){
+      res.render('admin/gameShow',{
+        title:"游戏详细信息",
+        game: game
+      })
+    }else{
+      res.render('404');
+    }
+  });
+}
+
+exports.updateGame = function(req, res){
+  var body = req.body;
+  var gid = req.params.gid;
+  var filesName = body.filesName;
+  var upload = __dirname+'/../../public/game/';
+  var newName = (new Date()).getTime()+Math.round(Math.random()*100).toString();
+  if(!gid){
+    res.send({
+      status: 1,
+      msg: '未知错误',
+      _csrf: res.locals.csrf_token
+    });
+  }
+  async.series([
+    function(cb){ 
+      async.auto({
+        checkName:function(callback){
+          var query = {name:body.game.name};
+          Game.findOne(query,function(err,game){
+            if(err){
+              callback(new Error(err.message));
+            }else if(game&&gid!=game._id){
+              callback(new Error("名称已存在，请换另一个名称"));
+            }else{
+              callback();
+            }
+          })
+        },
+        updateGame:['checkName',function (callback) {
+          Game.findByIdAndUpdate({_id:gid},body.game,function(err,result){
+            if(err){
+              callback(new Error(err.message));
+            }else{
+              callback();
+            }
+          })
+        }],
+        renameOldGameFile:['updateGame',function (callback) {
+          if(filesName&&fs.existsSync(upload+gid)){
+            fs.rename(upload+gid+"/",upload+gid+"_"+newName+"/",function(err){
+              if (err) { 
+                log.error(err);
+                callback(new Error("游戏文件关联错误，请重新上传并修改"));
+              }else {
+                callback(); 
+              }
+            });
+          }else{
+            callback();
+          }
+        }],
+        updatefilesname:['renameOldGameFile',function (callback) {
+          if(filesName){
+            fs.rename(upload+filesName+"/",upload+gid+"/",function(err){
+              if (err) { 
+                log.error(err);
+                callback(new Error("游戏文件关联错误，请重新上传并修改"));
+              }else {
+                callback(); 
+              }
+            });
+          }else{
+            callback();
+          }
+        }],
+      },function (err, results) {
+        if (err) {
+          log.error('updateGame Error: ', err.message);
+          res.send({
+            status: 1,
+            msg: err.message,
+            _csrf: res.locals.csrf_token
+          });
+          cb(err);
+        }else {
+          res.send({
+            status: 0,
+            msg:"修改成功",
+            _csrf: res.locals.csrf_token
+          });
+          cb();
+        }
+      });
+    },
+    function(cb) { 
+      if(filesName){
+        util.rmdirSync(upload+gid+"_"+newName,function(err){
+          if(err){
+            cb(err);
+          }else{
+            cb();
+          }
+        }) 
+      }else{
+        cb();
+      }
+    }
+  ], function(err, results) {
+    if(err){
+      log.error(err);
+      console.log(err);
+    }
+  });   
+};

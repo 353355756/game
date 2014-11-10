@@ -440,5 +440,4 @@ exports.updateWJ = function (req, res) {
       res.send({status: 0, _csrf: res.locals.csrf_token});
     }
   })
-  
 };

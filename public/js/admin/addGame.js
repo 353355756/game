@@ -10,7 +10,7 @@ $(document).ready(function(){
 		var game= {};
 		game.company = $('#game-compan').val();
 		game.name = $('#game-name').val();
-
+		game.gameFilePath = $('#game-path').val();
 		var obj = {
 			game:game,
 			_csrf: $("#hiden-value").val(),

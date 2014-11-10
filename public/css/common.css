@@ -799,6 +799,7 @@ input.error-img-input {
       top: 1px;
       left: 320px;
       display: inline-block;
+      z-index:1;
     }
     .zip-submit{
       position: absolute;
