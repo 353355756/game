@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "socket.io": "~0.9.16",
-    "express": "3.4.4",
+    "express": "4.x",
     "mongoose": "latest",
     "mongoose-user": "latest",
     "passport": "latest",
